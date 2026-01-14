@@ -2,17 +2,24 @@ name: Build Resume PDF
 
 on:
   push:
+    branches: [ main ]
     paths:
-      - "docs/resume.md"
+      - "docs/**"                  # テンプレ含め docs 配下すべてを監視
       - "styles/**"
+      - "scripts/**"
       - "md-to-pdf.config.json"
       - "package.json"
       - "pnpm-lock.yaml"
+      - ".github/workflows/build-pdf.yml"
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout
@@ -52,3 +59,18 @@ jobs:
           name: resume-pdf
           path: resume.pdf
           retention-days: 30
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p public
+          cp resume.pdf public/resume.pdf
+          # 任意: リポジトリのダミーMDも一緒に公開したい場合は以下を有効化
+          # cp docs/resume.md public/index.md
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
