@@ -91,8 +91,7 @@ jobs:
         run: |
           mkdir -p public
           cp "${{ steps.cfg.outputs.pdf_path }}" public/resume.pdf
-          # 任意: ダミーのMDをPagesにも出す場合（そのままMD表示）
-          # cp docs/resume.md public/index.md
+          cp docs/resume.md public/index.md
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

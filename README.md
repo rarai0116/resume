@@ -32,3 +32,6 @@
   LASTEDUCATION="Your Last Education"
   ```
   Then run the `render-md` script to generate the Markdown file with the replaced information.
+
+  [PDF](https://rarai0116.github.io/resume/resume.pdf)
+  [MD](https://rarai0116.github.io/resume/index.md)
