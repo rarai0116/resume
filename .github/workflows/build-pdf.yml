@@ -57,10 +57,27 @@ jobs:
         id: cfg
         run: |
           set -e
-          OUT=$(node -e "try{const c=require('./md-to-pdf.config.json');if(c && c.out){process.stdout.write(c.out);process.exit(0)}}catch(e){};")
-          if [ -z "$OUT" ]; then
+          # 1) config.out を読む（存在するかも確認）
+          CFG=$(node -e "try{const c=require('./md-to-pdf.config.json'); if(c && c.out){process.stdout.write(c.out)}}catch(e){}")
+          if [ -n "$CFG" ] && [ -f "$CFG" ]; then
+            OUT="$CFG"
+          elif [ -f ".tmp/resume.local.pdf" ]; then
             OUT=".tmp/resume.local.pdf"
+          elif [ -f "resume.pdf" ]; then
+            OUT="resume.pdf"
+          else
+            # .tmp 配下のPDFを一枚探して採用
+            OUT=$(ls -1 .tmp/*.pdf 2>/dev/null | head -n1 || true)
           fi
+
+          if [ -z "$OUT" ] || [ ! -f "$OUT" ]; then
+            echo "No PDF found after build." >&2
+            echo "Tree for debug:" >&2
+            ls -R . >&2 || true
+            exit 1
+          fi
+
+          echo "Resolved PDF: $OUT"
           echo "pdf_path=$OUT" >> "$GITHUB_OUTPUT"
 
       - name: Upload artifact
@@ -74,7 +91,7 @@ jobs:
         run: |
           mkdir -p public
           cp "${{ steps.cfg.outputs.pdf_path }}" public/resume.pdf
-          # 任意: リポジトリのダミーMDも一緒に公開したい場合は以下を有効化
+          # 任意: ダミーのMDをPagesにも出す場合（そのままMD表示）
           # cp docs/resume.md public/index.md
 
       - name: Upload Pages artifact
