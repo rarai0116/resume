@@ -55,7 +55,13 @@ jobs:
       
       - name: Resolve PDF path
         id: cfg
-        run: echo "pdf_path=$(node -p 'require(\"./md-to-pdf.config.json\").out || \".tmp/resume.pdf\"')" >> $GITHUB_OUTPUT
+        run: |
+          set -e
+          OUT=$(node -e "try{const c=require('./md-to-pdf.config.json');if(c && c.out){process.stdout.write(c.out);process.exit(0)}}catch(e){};")
+          if [ -z "$OUT" ]; then
+            OUT=".tmp/resume.local.pdf"
+          fi
+          echo "pdf_path=$OUT" >> "$GITHUB_OUTPUT"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
