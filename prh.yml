@@ -1,0 +1,116 @@
+version: 1
+rules:
+  - expected: React Native
+    pattern: /React\s*Native|ReactNative/
+
+  - expected: Expo SDK
+    pattern: /Expo\s*SDK|ExpoSDK/
+
+  - expected: Tailwind CSS
+    pattern: /Tailwind\s*CSS|TailWind\s*CSS/i
+
+  - expected: iOS
+    pattern: /ios/i
+  
+  - expected: Android
+    pattern: /android/i
+
+  - expected: Realtime Database
+    pattern: /Realtime\s*Database|RealtimeDatabase/
+
+  - expected: App Store Connect
+    pattern: /App\s*Store\s*Connect|AppStoreConnect/
+
+  - expected: App Distribution
+    pattern: /App\s*Distribution|AppDistribution/
+
+  - expected: Crashlytics
+    pattern: /Crashlytics|CrashlyTics/
+  
+  - expected: Firebase
+    pattern: /Firebase|FireBase/
+  
+  - expected: WordPress
+    pattern: /Word\s*Press|WordPress/
+
+  - expected: Local Emulator Suite
+    pattern: /Local\s*Emulator(\s*Suite)?|localEmulator/i
+
+  - expected: GitHub
+    pattern: /Github|github/
+    prh: 製品名の正しい表記
+
+  - expected: GitHub Projects
+    patterns:
+    - /\bGitHub\s+Project\b/
+    - /\bGithub\s+Project\b/
+    - /\bGithub\s+Projects\b/
+    prh: 製品名の正しい表記と複数形へ正規化
+
+  - expected: ESLint
+    pattern: /ES\s*Lint|ESLINT/
+
+  - expected: Prettier
+    pattern: /Prettier|PrettiER/
+
+  - expected: Electron + Vite
+    pattern: /Electron\+vite|Electron\s*\+\s*vite/
+
+  - expected: Cocos Creator
+    pattern: /CocosCreator/
+
+  - expected: Playwright
+    pattern: /PlayWeight/i
+
+  - expected: ActionScript 3.0
+    pattern: /ActionScript\s*3\.0|ActionScript3\.0/
+
+  - expected: Cardboard SDK
+    pattern: /cardboardSDK|CardboardSDK/i
+
+  - expected: Google Translator Toolkit
+    pattern: /google\s*translator\s*toolkit/i
+
+  - expected: BFF (Backend for Frontend)
+    pattern: /BFF\s*\(Backend\s*For\s*Frontend\)/
+  
+  - expected: CI/CD
+    pattern: /CI\s*\/\s*CD|CICD|CI\s*-\s*CD/
+  
+  - expected: Biome
+    pattern: /Biome|BioMe|BioME|biome/
+  
+  - expected: Managed Workflow
+    pattern: /Managed\s*Workflow|managedWorkflow|ManagedWorkflow/
+  
+  - expected: TestFlight
+    pattern: /Test\s*Flight|TestFlight/
+  
+  - expected: Google Apps Script
+    pattern: /Google\s*Apps\s*Script|GoogleAppsScript\b/
+  
+  - expected: Vitest
+    pattern: /Vite\s*Test|Vitest|ViteTest|vitest/
+  
+  - expected: Jest
+    pattern: /Jest|JEST|jest/
+  
+  - expected: TeX
+    pattern: /TeX|TEX|tex/
+  
+  - expected: LaTeX
+    pattern: /LaTeX|LATEX|latex/
+  
+  - expected: KaTeX
+    pattern: /KaTeX|KATEX|katex/
+  
+  - expected: Firestore
+    pattern: /firestore|FireStore|FireStore database|Firestore Database/
+    prh: Firestore
+
+  - expected: やり取りし
+    patterns:
+      - やり取りを行い
+      - やり取りを行う
+    prh: 冗長表現の簡潔化
+

@@ -1,0 +1,12 @@
+{
+	"out": "output/resume.pdf",
+	"stylesheet": ["styles/resume.css"],
+	"pdf_options": {
+		"format": "A4",
+		"margin": "15mm",
+		"printBackground": true
+	},
+	"launch_options": {
+		"args": ["--no-sandbox"]
+	}
+}

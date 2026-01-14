@@ -1,0 +1,13 @@
+{
+	"devDependencies": {
+		"dotenv": "^17.2.3",
+		"md-to-pdf": "^5.2.5",
+		"textlint": "^15.5.0",
+		"textlint-rule-preset-ja-technical-writing": "^12.0.2",
+		"textlint-rule-prh": "^6.1.0"
+	},
+	"scripts": {
+		"build:pdf": "node scripts/build-pdf.js",
+		"prepare": "husky"
+	}
+}

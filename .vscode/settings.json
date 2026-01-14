@@ -1,0 +1,10 @@
+{
+	"editor.defaultFormatter": "3w36zj6.textlint",
+	"editor.formatOnSave": true,
+	"files.autoSave": "afterDelay",
+	"textlint.configPath": "C:\\Users\\studi\\Documents\\_Projects\\resume\\.textlintrc.json",
+	"textlint.nodePath": "C:\\Users\\studi\\Documents\\_Projects\\resume\\node_modules",
+	"textlint.languages": [
+		"plaintext", "markdown", "novel"
+	]
+}

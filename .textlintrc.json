@@ -1,0 +1,16 @@
+{
+  "plugins": {},
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": {
+      "max-kanji-continuous-len": false,
+      "ja-no-mixed-period": false,
+      "sentence-length": {
+        "max": 120
+      }
+    },
+    "prh": {
+      "rulePaths": ["./prh.yml"]
+    }
+  }
+}

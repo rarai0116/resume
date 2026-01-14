@@ -1,0 +1,73 @@
+:root {
+  --text: #111;
+  --muted: #555;
+  --border: #ddd;
+  --heading: #0f172a;
+}
+
+html, body {
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", Meiryo, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 12pt;
+}
+
+h1, h2, h3 {
+  color: var(--heading);
+  margin: 0.8em 0 0.4em;
+}
+
+h1 { font-size: 20pt; }
+h2 { font-size: 16pt; }
+h3 { font-size: 14pt; }
+h4 { font-size: 12pt; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.6em 0 1em;
+  font-variant-numeric: tabular-nums;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  vertical-align: top;
+}
+th { background: #f8fafc; text-align: left; }
+
+ul, ol { padding-left: 1.2em; margin: 0.4em 0 0.8em; }
+
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+@page { size: A4; margin: 15mm; }
+
+/* Heading spacing: セクション間の明確な余白 */
+h1 { margin: 0 0 0.8em; }
+h2 { margin: 2em 0 0.6em; }
+h3 { margin: 1.5em 0 0.4em; }
+h4 { margin: 0.8em 0 0 0; }
+
+/* 段落の縦リズム */
+p { margin: 0 0 0.8em; }
+
+/* セクション改ページ（h2の直前で改ページ、最初のh2は除外） */
+h2:not(:first-of-type) {
+  break-before: page;          /* 標準 */
+  page-break-before: always;   /* 互換用 */
+}
+
+/* 見出し直後の塊は分割回避（できる範囲で） */
+h2 + p,
+h2 + ul,
+h2 + ol,
+h2 + table {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* 手動改ページ用ユーティリティ（Markdownで<div class="page-break"></div>を挿入） */
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
