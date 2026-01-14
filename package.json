@@ -1,6 +1,7 @@
 {
 	"devDependencies": {
 		"dotenv": "^17.2.3",
+		"husky": "^9.1.7",
 		"md-to-pdf": "^5.2.5",
 		"textlint": "^15.5.0",
 		"textlint-rule-preset-ja-technical-writing": "^12.0.2",
