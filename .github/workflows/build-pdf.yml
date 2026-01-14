@@ -36,11 +36,6 @@ jobs:
           node-version: 20
           cache: pnpm
 
-      - name: Install Japanese fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk
-
       - name: Setup Chrome
         id: chrome
         uses: browser-actions/setup-chrome@v1
@@ -53,11 +48,11 @@ jobs:
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.chrome.outputs.chrome-path }}
       
-      - name: Resolve PDF path
+      - name: Resolve PDF/MD path
         id: cfg
         run: |
           set -e
-          # 1) config.out を読む（存在するかも確認）
+          # ---- PDF path resolve ----
           CFG=$(node -e "try{const c=require('./md-to-pdf.config.json'); if(c && c.out){process.stdout.write(c.out)}}catch(e){}")
           if [ -n "$CFG" ] && [ -f "$CFG" ]; then
             OUT="$CFG"
@@ -66,19 +61,31 @@ jobs:
           elif [ -f "resume.pdf" ]; then
             OUT="resume.pdf"
           else
-            # .tmp 配下のPDFを一枚探して採用
             OUT=$(ls -1 .tmp/*.pdf 2>/dev/null | head -n1 || true)
           fi
-
           if [ -z "$OUT" ] || [ ! -f "$OUT" ]; then
             echo "No PDF found after build." >&2
-            echo "Tree for debug:" >&2
             ls -R . >&2 || true
             exit 1
           fi
-
           echo "Resolved PDF: $OUT"
           echo "pdf_path=$OUT" >> "$GITHUB_OUTPUT"
+
+          # ---- MD path resolve ----
+          if [ -f "docs/resume.md" ]; then
+            MD="docs/resume.md"
+          elif [ -f ".tmp/resume.local.md" ]; then
+            MD=".tmp/resume.local.md"
+          else
+            MD=$(ls -1 .tmp/*.md 2>/dev/null | head -n1 || true)
+          fi
+          if [ -z "$MD" ] || [ ! -f "$MD" ]; then
+            echo "No MD found after build." >&2
+            ls -R . >&2 || true
+            exit 1
+          fi
+          echo "Resolved MD: $MD"
+          echo "md_path=$MD" >> "$GITHUB_OUTPUT"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -91,7 +98,7 @@ jobs:
         run: |
           mkdir -p public
           cp "${{ steps.cfg.outputs.pdf_path }}" public/resume.pdf
-          cp docs/resume.md public/index.md
+          cp "${{ steps.cfg.outputs.md_path }}" public/index.md
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

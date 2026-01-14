@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 :root {
   --text: #111;
   --muted: #555;
@@ -6,7 +8,7 @@
 }
 
 html, body {
-  font-family: "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+  font-family: "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN",
     "Yu Gothic", Meiryo, sans-serif;
   color: var(--text);
   line-height: 1.6;
