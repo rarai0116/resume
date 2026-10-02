@@ -7,57 +7,56 @@
   --heading: #0f172a;
 }
 
+/* 用紙と余白 */
+@page { size: A4; margin: 12mm; }
+
+/* 本文：11pt基準 */
 html, body {
   font-family: "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN",
     "Yu Gothic", Meiryo, sans-serif;
   color: var(--text);
-  line-height: 1.6;
-  font-size: 12pt;
+  line-height: 1.45;
+  font-size: 11pt;
 }
 
-h1, h2, h3 {
+/* 見出し：本文11ptに合わせて段階的に小さくする */
+h1, h2, h3, h4 {
   color: var(--heading);
-  margin: 0.8em 0 0.4em;
+  line-height: 1.3;
+  break-after: avoid;          /* 見出しだけがページ末尾に残るのを防ぐ */
+  page-break-after: avoid;     /* 互換用 */
 }
 
-h1 { font-size: 20pt; }
-h2 { font-size: 16pt; }
-h3 { font-size: 14pt; }
-h4 { font-size: 12pt; }
+h1 { font-size: 15pt; margin: 0 0 0.5em; }
+h2 {
+  font-size: 13pt;
+  margin: 1.2em 0 0.4em;
+  padding-bottom: 0.15em;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 12pt; margin: 1em 0 0.3em; }
+h4 { font-size: 11pt; margin: 0.6em 0 0.1em; }
 
+/* 段落・リストの縦リズム */
+p { margin: 0 0 0.5em; }
+ul, ol { padding-left: 1.2em; margin: 0.2em 0 0.5em; }
+li { margin: 0; }
+
+/* 表 */
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 0.6em 0 1em;
+  margin: 0.4em 0 0.6em;
   font-variant-numeric: tabular-nums;
 }
 th, td {
   border: 1px solid var(--border);
-  padding: 6px 8px;
+  padding: 3px 6px;
   vertical-align: top;
 }
 th { background: #f8fafc; text-align: left; }
 
-ul, ol { padding-left: 1.2em; margin: 0.4em 0 0.8em; }
-
 code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-
-@page { size: A4; margin: 15mm; }
-
-/* Heading spacing: セクション間の明確な余白 */
-h1 { margin: 0 0 0.8em; }
-h2 { margin: 2em 0 0.6em; }
-h3 { margin: 1.5em 0 0.4em; }
-h4 { margin: 0.8em 0 0 0; }
-
-/* 段落の縦リズム */
-p { margin: 0 0 0.8em; }
-
-/* セクション改ページ（h2の直前で改ページ、最初のh2は除外） */
-h2:not(:first-of-type) {
-  break-before: page;          /* 標準 */
-  page-break-before: always;   /* 互換用 */
-}
 
 /* 見出し直後の塊は分割回避（できる範囲で） */
 h2 + p,
