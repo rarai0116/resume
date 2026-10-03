@@ -1,14 +1,14 @@
 # 職務経歴書
 
 ## プロフィール
-| 項目         | 内容                            |            |
-| ---------- | ----------------------------- | ---------- |
-| 名前         | {{NAME                        | XXXX}}     |
-| 生年月日       | {{DOB                         | XXXX/M/D}} |
-| 居住地        | {{RESIDENCE                   | XXXX}}     |
-| 最終学歴       | {{LASTEDUCATION               | XXXX卒業}}   |
-| ポートフォリオサイト | https://www.studio-corobo.com |            |
-| GitHub     | https://github.com/rarai0116/ |            |
+| 項目         | 内容                            |
+| ---------- | ----------------------------- |
+| 名前         | {{NAME\|XXXX}}                |
+| 生年月日       | {{DOB\|XXXX/M/D}}             |
+| 居住地        | {{RESIDENCE\|XXXX}}           |
+| 最終学歴       | {{LASTEDUCATION\|XXXX卒業}}     |
+| ポートフォリオサイト | https://www.studio-corobo.com |
+| GitHub     | https://github.com/rarai0116/ |
 
 ### 自然言語
 日本語：ネイティブ<br>
@@ -72,12 +72,14 @@ Vitest / Jest
 ## 職務経歴
 
 ### 校内専用建築士試験問題集スマートフォンアプリの開発・運用・保守
-**{{P_ORG_001|某専門学校}}**
+<div class="project-meta">
 
-| 2022/7 〜 2025/11 | 請負 | 4名(開発コア2名)
-ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/workbook-app/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/workbook-app) 
+**{{P_ORG_001|某専門学校}}**　2022/7 〜 2025/11 | 請負 | 4名(開発コア2名)<br>
+ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/workbook-app/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/workbook-app)
 
-**主な使用技術**：React Native / Expo / TypeScript / Tailwind / Firebase / Google Cloud/EAS/BigQuery
+</div>
+
+**主な使用技術**：React Native / Expo / TypeScript / Tailwind / Firebase / Google Cloud / EAS / BigQuery
 
 #### 役割
 設計・フロントエンド・バックエンド開発
@@ -96,10 +98,12 @@ Vitest / Jest
 
 ### 問題データ管理システムのリビルド
 
-**{{P_ORG_001|某専門学校}}**
+<div class="project-meta">
 
-2025/6 〜 2026/7 | 請負 | 3名(開発コア2名)
-ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/test-manager/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/test-manager) 
+**{{P_ORG_001|某専門学校}}**　2025/6 〜 2026/7 | 請負 | 3名(開発コア2名)<br>
+ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/test-manager/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/test-manager)
+
+</div>
 
 **主な使用技術**：Electron / Vite / TypeScript / Firebase / Google Cloud / GitHub Actions / pnpm / Biome
 
@@ -119,8 +123,11 @@ Vitest / Jest
 
 ### 講師専用の問題集PDF作成ツール
 
-**{{P_ORG_001|某専門学校}}**
-2021/7〜2022/7 | 請負 | 3名(開発コア2名)
+<div class="project-meta">
+
+**{{P_ORG_001|某専門学校}}**　2021/7〜2022/7 | 請負 | 3名(開発コア2名)
+
+</div>
 
 **主な使用技術**：Electron / JavaScript / GAS / Google Cloud
 
@@ -134,8 +141,11 @@ Vitest / Jest
 
 ### 過去問の半自動データ化システムの構築と模擬試験問題PDF作成ツールの試作
 
-**{{P_ORG_001|某専門学校}}**
-2020/3 ～ 2021/7 | 請負 | 3名(開発コア2名)
+<div class="project-meta">
+
+**{{P_ORG_001|某専門学校}}**　2020/3 ～ 2021/7 | 請負 | 3名(開発コア2名)
+
+</div>
 
 #### 役割
 フロントエンド兼バックエンド開発・データ化作業
@@ -145,15 +155,17 @@ Vitest / Jest
 
 ### プレイアブルゲーム広告開発
 
-**{{P_ORG_002|某社}}（現 {{P_ORG_003|某社}}）**
-2018/8 ～ 2019/4 | 業務委託 | 1名
+<div class="project-meta">
+
+**{{P_ORG_002|某社}}（現 {{P_ORG_003|某社}}）**　2018/8 ～ 2019/4 | 業務委託 | 1名
+
+</div>
+
+**主な使用技術**：Cocos Creator(JavaScript) / jQuery / PixiJSなど
 
 #### 役割
 企画・開発・デバッグ
  - ゲーム形式のプレイアブル広告を作成しました。可能な限り、出稿元のゲームの魅力を伝えられるよう、実際に近い体験を提供することを意識しました
-
-#### 使用技術
-Cocos Creator(JavaScript) / jQuery / PixiJSなど
 
 
 ### 2010/3〜2017/6 モバイル向け HTML5・Flashアニメ・ミニゲームの開発

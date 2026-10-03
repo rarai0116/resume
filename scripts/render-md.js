@@ -11,8 +11,8 @@ const OUT = resolve(".tmp/resume.local.md");
 
 const src = readFileSync(SRC, "utf8");
 
-// {{KEY}} or {{KEY|default}} を置換（表の整形で入る "|" 前後の空白も許容）
-const rendered = src.replace(/{{\s*([A-Z0-9_]+)\s*(?:\|([^}]*))?\s*}}/g, (_, key, def) => {
+// {{KEY}} or {{KEY|default}} を置換（表の整形で入る "|" 前後の空白と、表の中で使う "\|" も許容）
+const rendered = src.replace(/{{\s*([A-Z0-9_]+)\s*(?:\\?\|([^}]*))?\s*}}/g, (_, key, def) => {
   const v = process.env[key];
   if (v && v.trim().length > 0) return v;
   return def !== undefined ? def.trim() : "";
