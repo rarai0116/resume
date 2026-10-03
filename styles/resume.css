@@ -27,10 +27,10 @@ h1, h2, h3, h4 {
   page-break-after: avoid;     /* 互換用 */
 }
 
-h1 { font-size: 15pt; margin: 0 0 0.5em; }
+h1 { font-size: 15pt; margin: 0 0 0.5em; text-align: center; }
 h2 {
   font-size: 13pt;
-  margin: 1.2em 0 0.4em;
+  margin: calc(1.2em + 3mm) 0 0.4em;   /* セクションの区切りを明確にするため3mm足す */
   padding-bottom: 0.15em;
   border-bottom: 1px solid var(--border);
 }

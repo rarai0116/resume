@@ -33,87 +33,51 @@
 - SQL（1年）
 - Swift（少し触った程度・勉強中）
 
-### モバイルアプリ開発
-- React Native + Expo
-  - 環境構築から実装、ビルド、TestFlightなどによる外部テスト配信など、一通りの開発工程
-  - Managed Workflow/開発ビルドによる開発フロー
-  - iOS/Androidの同時対応
-  - TestFlightなどの配信による限定的リリース・運用
-  - Expo SDKのアップデートに伴う改修（SDK 47～56）
-  - 旧アーキテクチャから新アーキテクチャへの移行
-
-### デスクトップアプリ開発
-- Electron + Vite
-  - 環境構築から実装、ビルドなど一通りの開発工程
-  - ローカル開発環境と本番環境の分離
-  - 結合テストの実装・CI/CD
+### 主な技術
+React Native + Expo：環境構築、実装、ビルド、iOS / Android対応、SDK更新、新アーキテクチャ対応など
+Electron + Vite：環境構築、実装、ビルド、テスト実装、CI/CD、ローカル開発環境構築
 
 
 ### クラウド
-- Firebase
-  Firestore/Realtime Database/Auth/Analytics/Storage/App Distribution/Functions/Crashlytics/Hosting/Messaging
-- Google Cloud
-- GAS（Google Apps Script）
+Firebase / Google Cloud / GAS（Google Apps Script）
 
 ### Web開発
 - Next.js：関係者専用ページや小規模な個人用サイトの制作経験
 - ヘッドレスWordPress
 
 ### CSSフレームワーク・UIコンポーネント
-- Tailwind CSS
-- shadcn/ui
+Tailwind CSS、shadcn/ui
 
 ### ゲーム開発
-- Cocos Creator
-- Unity
-- PixiJS
-- Flash（現Adobe Animate）+ CreateJSなど
+Cocos Creator / Unity / PixiJS / Flash（現Adobe Animate）+ CreateJSなど
 
 学生時代からミニゲームなど小規模ゲーム開発やプレイアブル広告の開発などを行っていました。
 企画から素材制作、実装など大半の工程を担当しました。
 
 
 ### プロジェクト管理
-- GitHub
-- GitHub Projects
-- pnpm
-- Docker
-- monorepoプロジェクトの導入経験あり
+GitHub / GitHub Projects / pnpm（モノレポ環境）/ Docker　
 
 ### テストツール
-- Vitest
-- Jest
+Vitest / Jest
 
 ### その他
-- リンター：ESLint・Prettier・Biome
+- リンター：ESLint / Prettier / Biome
 - UIドキュメント：Storybook
-- TeX/KaTeX：導入経験あり
+- TeX / KaTeX：導入経験あり
+- AI支援：GitHub Copilot / Claude Code / Codex 
 - PRコードレビュー経験あり
-- AI:GitHub Copilot/Claude Code/Codex
 
 
 ## 職務経歴
 
 ### 校内専用建築士試験問題集スマートフォンアプリの開発・運用・保守
+**{{P_ORG_001|某専門学校}}**
 
+| 2022/7 〜 2025/11 | 請負 | 4名(開発コア2名)
 ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/workbook-app/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/workbook-app) 
 
-#### {{P_ORG_001|某専門学校}}
-
-#### 期間
-
-2022/7 〜 2025/11
-
-#### 契約形態
-
-請負
-
-#### チーム人数
-
-プロジェクト体制：顧客PO 1・フロントエンド/バックエンド 1・デザイン/フロントエンド 1
-開発コア：2名
-
-計 4名
+**主な使用技術**：React Native / Expo / TypeScript / Tailwind / Firebase / Google Cloud/EAS/BigQuery
 
 #### 役割
 設計・フロントエンド・バックエンド開発
@@ -128,36 +92,19 @@
  - Expo非対応ネイティブモジュールをManaged Workflowでも導入するために、 Podfileを自動書き換えする仕組みを実装しました
  - 大容量ファイルを効率よく扱うために、キャッシュ戦略および自動差分ダウンロードシステムを構築しました
  
-#### 使用技術
-
-  - フロントエンド：React Native + Expo + TypeScript + Tailwind CSS
-  - バックエンド：Firebase + Google Cloud
-  - CI/CD：Expo Application Services（EAS）
-  - その他：Jest/Storybook/ESLint
 
 
 ### 問題データ管理システムのリビルド
 
-#### {{P_ORG_001|某専門学校}}
+**{{P_ORG_001|某専門学校}}**
 
+2025/6 〜 2026/7 | 請負 | 3名(開発コア2名)
 ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/test-manager/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/test-manager) 
 
-#### 期間
-
-2025/6 〜 2026/7
-
-#### 契約形態
-
-請負
-
-#### チーム人数
-
-プロジェクト体制：顧客PO 1・フロントエンド/バックエンド 1・デザイン/フロントエンド 1
-開発コア：2名
-
-計 3名
+**主な使用技術**：Electron / Vite / TypeScript / Firebase / Google Cloud / GitHub Actions / pnpm / Biome
 
 #### 役割
+
 設計・フロントエンド・バックエンド開発
   - かつて開発した古い問題データ管理システムを更改し、顧客側に問題データ管理業務を移管するためにシステムのリビルドを行いました
   - 要件定義、提案から設計、実装に至るまで一貫して行い、システムの運用を顧客に移管しました
@@ -170,30 +117,12 @@
  - 今後の機能拡張に備え、各画面は疎結合なモジュール構成を構築するよう設計しました
 
 
-### 使用技術
+### 講師専用の問題集PDF作成ツール
 
-  - フロントエンド：Electron + Vite + TypeScript + Tailwind CSS
-  - バックエンド：Firebase（Firestore, Functions, Auth, Storage） + Google Cloud
-  - CI/CD：GitHub Actions + Vitest
-  - その他：pnpm + monorepo
+**{{P_ORG_001|某専門学校}}**
+2021/7〜2022/7 | 請負 | 3名(開発コア2名)
 
-
-#### {{P_ORG_001|某専門学校}}
-
-#### 期間
-
-2021/7〜2022/7
-
-#### 契約形態
-
-請負
-
-#### チーム人数
-
-プロジェクト体制：顧客PO 1・フロントエンド/バックエンド 1・デザイン/フロントエンド 1
-開発コア：2名
-
-計 3名
+**主な使用技術**：Electron / JavaScript / GAS / Google Cloud
 
 #### 役割
 バックエンド・BFF（Backend for Frontend）開発
@@ -202,161 +131,41 @@
 
 #### 具体的な取り組み
  - HTML→PDF出力において、改ページがうまくいかない課題に対し、DOM解析と前処理による自動整形＋独自ページネーションを実装し、適切な改ページ点を付与してからPDF化する仕組みを開発しました
-#### 使用技術
-  - フロントエンド：Electron + JavaScript
-  - バックエンド：GAS + Google Cloud
 
+### 過去問の半自動データ化システムの構築と模擬試験問題PDF作成ツールの試作
 
-
-### 過去問の半自動データ化システムの構築と模擬試験問題作成ツールの開発
-
-#### {{P_ORG_001|某専門学校}}
-
-#### 開発期間
-
-2020/3 ～ 2021/7
-※ 一部システムは現在まで運用中
-
-#### 契約形態
-
-請負
-
-#### チーム人数
-プロジェクト体制：顧客PO 1・フロントエンド/バックエンド/データ化 1・データ化 1
-開発コア：2名
-計 3名
+**{{P_ORG_001|某専門学校}}**
+2020/3 ～ 2021/7 | 請負 | 3名(開発コア2名)
 
 #### 役割
 フロントエンド兼バックエンド開発・データ化作業
   - 設計・検証・実装を一貫して担当していました
   - データ化は可能な限り自動化し、人の手が極力かからないようにしつつ、精度を仕組みで担保できるよう設計しました
-  - 実際に作成したシステムを運用してのデータ化作業も担当しました
+  - 実際に作成したシステムを運用してのデータ化作業にも従事しました
 
 ### プレイアブルゲーム広告開発
 
-#### {{P_ORG_002|某社}}（現 {{P_ORG_003|某社}}）
-
-#### 期間
-
-2018/8 ～ 2019/4
-
-#### 契約形態
-
-業務委託
+**{{P_ORG_002|某社}}（現 {{P_ORG_003|某社}}）**
+2018/8 ～ 2019/4 | 業務委託 | 1名
 
 #### 役割
 企画・開発・デバッグ
  - ゲーム形式のプレイアブル広告を作成しました。可能な限り、出稿元のゲームの魅力を伝えられるよう、実際に近い体験を提供することを意識しました
- - 使用ツールは案件に応じて、Cocos Creator・PixiJS・jQueryなどを使い分けました
 
 #### 使用技術
-- Cocos Creator(JavaScript)
-- jQuery/PixiJSなど
-
-### HTML5ゲーム受託開発
-
-#### 受託開発企業
-
-#### 期間
-2015/9 ～ 2017/6
-
-#### 契約形態
-請負
-
-#### 役割
-開発・デバッグ
-  - クライアントからの要件をもとに、HTML5ゲームの開発とデバッグを担当しました
-  - ジャンルはパズルやアクションなど様々で、一本につき一週間～一ヶ月程度の短いスパンで開発しました
-
-#### 使用技術
-  - enchant.js(JavaScript)
+Cocos Creator(JavaScript) / jQuery / PixiJSなど
 
 
-### 求人アニメーション動画制作
+### 2010/3〜2017/6 モバイル向け HTML5・Flashアニメ・ミニゲームの開発
 
-#### 受託開発企業
-
-#### 期間
-2014/4 ～ 2015/3
-
-#### 契約形態
-請負
- - デザイナーさんからいただいた絵コンテをもとに、Flash（現Adobe Animate）を使用して求人広告用アニメーション動画の制作・書き出しを担当しました
-
-
-### モバイル向け HTML5・Flashアニメ・ミニゲームの開発
-
-#### {{P_ORG_005|某社}}
-
-#### 期間
-
-2010/3 ～ 2014/3
-
-#### 契約形態
-
-アルバイト
-
-#### 役割
-企画・開発・デザイン・デバッグ
-  - モバイル向けのHTML5アニメーションやミニゲーム、Flashアニメーションやミニゲームの企画・開発・デバッグ・一部デザインを担当しました
-  - 主にフィーチャーフォン向けのコンテンツ開発でしたが後期にはスマートフォン向けのコンテンツ開発も担当しました
-#### 使用技術
-  - Flash（現Adobe Animate） + ActionScript 1.1/2.0/3.0
-  - Unity + C#
-  - HTML5 + JavaScript + CreateJS
+UnityやFlash、HTML5技術を使用して、モバイル向けのミニゲーム、アニメーションの企画・デザイン・開発に従事しました。2014年以降は、フリーランスとして複数企業から受託を受けました。
 
 ## その他・個人開発
 
-### ボスニア・ヘルツェゴビナ VR/AR講座講師
+- Unity / Cardboard SDKを用いたVRアプリ開発でPM・SEリーダーを担当(2017/10〜12)
+- {{P_ORG_007}}の学生向けにVR/AR開発講座をボランティアで実施(2017/3〜6)
+- VR動画12時間分の日本語翻訳プロジェクトに参加(2017/9〜2018/5)
 
-#### {{P_ORG_006|某NPO法人}}
-
-#### 期間
-
-2017/10 ～ 2017/12
-
-#### 契約形態
-
-ボランティア
-
- - ボスニア・ヘルツェゴビナの{{P_ORG_007|某大学}}の学生を対象に、VR/AR技術に関する講座を英語（通訳役あり）で実施しました
- - 主にUnityを使用した開発手法や、VR/ARの基礎知識について講義しました
-
-### VR動画翻訳プロジェクト
-
-#### {{P_ORG_004|某社}}
-
-#### 期間
-
-2017/9 ～ 2018/5
-
-#### 契約形態
-
-業務委託（連携プロジェクト）
-
-  合計12時間分のVR動画の日本語翻訳を英語が得意なメンバーと協力して作業しました。効率的に行うため、Google Translator Toolkitなどの翻訳支援ツールを活用しました
-
-
-### マインドフルネスVRアプリ開発
-
-#### {{P_ORG_004|某社}}
-
-#### 期間
-2017/3 ～ 2017/6
-
-#### 契約形態
-
-業務委託（連携プロジェクト）
-
-#### 役割
-PM・SEリーダー
- - Cardboard SDKを使用して、VR空間でマインドフルネスを体験できるアプリの開発を担当しました
- - プロジェクトマネージャー兼システムエンジニアリーダーとして、要件定義から設計、進捗管理まで幅広く担当しました
- - 開発チームが総じて未経験だったため、UnityやVR開発に関する技術支援も行いました
-
-#### 使用技術
-  - Unity + C#
-  - Cardboard SDK 
 
 ## 自己PR
 <ins>設計・実装から運用まで一貫して携わった経験</ins>
