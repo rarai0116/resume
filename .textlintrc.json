@@ -7,10 +7,18 @@
       "ja-no-mixed-period": false,
       "sentence-length": {
         "max": 200
+      },
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "",
+        "preferInBody": "ですます",
+        "preferInList": "",
+        "strict": false
       }
     },
     "prh": {
-      "rulePaths": ["./prh.yml"]
+      "rulePaths": [
+        "./prh.yml"
+      ]
     }
   }
 }
