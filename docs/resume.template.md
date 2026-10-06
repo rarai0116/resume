@@ -34,7 +34,7 @@
 - Swift（少し触った程度・勉強中）
 
 ### 主な技術
-React Native + Expo：環境構築、実装、ビルド、iOS / Android対応、SDK更新、新アーキテクチャ対応など
+React Native + Expo（3年以上）：環境構築、実装、ビルド、iOS / Android対応、SDK更新、新アーキテクチャ対応など
 Electron + Vite：環境構築、実装、ビルド、テスト実装、CI/CD、ローカル開発環境構築
 
 
@@ -75,7 +75,7 @@ Vitest / Jest
 <div class="project-meta">
 
 **{{P_ORG_001|某専門学校}}**　2022/7 〜 2025/11 | 請負 | 4名(開発コア2名)<br>
-ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/workbook-app/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/workbook-app)
+ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/workbook-app/docs/contributors/arai.md)　[プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/workbook-app)
 
 </div>
 
@@ -101,7 +101,7 @@ Vitest / Jest
 <div class="project-meta">
 
 **{{P_ORG_001|某専門学校}}**　2025/6 〜 2026/7 | 請負 | 3名(開発コア2名)<br>
-ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/test-manager/docs/contributors/arai.md) [プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/test-manager)
+ポートフォリオ：[私の担当・実績](https://github.com/rarai0116/portfolio-test-platform/blob/main/apps/test-manager/docs/contributors/arai.md)　[プロダクト紹介・公開レポジトリ](https://github.com/rarai0116/portfolio-test-platform/tree/main/apps/test-manager)
 
 </div>
 
