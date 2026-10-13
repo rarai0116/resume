@@ -10,60 +10,25 @@
 | ポートフォリオサイト | https://www.studio-corobo.com |
 | GitHub     | https://github.com/rarai0116/ |
 
-### 資格
-- 基本情報技術者試験 平成30年4月合格
-- 応用情報技術者試験 令和6年4月合格
-- 情報処理安全確保支援士試験 令和6年10月合格
-
 ### 職務要約
 ゲーム開発を起点としたクリエイターとしての経験と、アプリ・システム開発者として10年以上の実務経験を持っています。特定の技術や役割に閉じず、状況に応じた設計や技術選定をして、プロダクトとして完遂させて参りました。
 
 現在は、Expo・Electronを中心に、モバイルを含むマルチプラットフォームアプリおよびシステムの設計・開発をメインに従事しています。
 
 ## スキル
-### 言語
-- TypeScript（5年）
-- JavaScript（10年以上）
-- Python（2年）
-- C#（2年）
-- SQL（1年）
-- Swift（少し触った程度・勉強中）
+| 分類 | 実務で主に使用 | 実務で一部に使用 |
+| --- | --- | --- |
+| 言語 | TypeScript（5年）、JavaScript（10年以上） | Python、SQL |
+| アプリ・Web | React（5年以上）、React Native / Expo（3年以上）、Electron / Vite（3年以上）、Tailwind CSS | Next.js、shadcn/ui |
+| クラウド・DB | Firebase、Google Cloud、GAS | BigQuery |
+| 開発ツール | Git、GitHub（Actions / Projects）、pnpm（モノレポ）、EAS、Vitest / Jest、ESLint / Prettier / Biome、Storybook | Docker |
+| ゲーム開発 | Unity（C#）、Cocos Creator、PixiJS、Flash（現 Adobe Animate）/ CreateJS | |
+| その他 | GitHub Copilot / Claude Code / Codex、TeX / KaTeX | |
 
-### 主な技術
-React Native + Expo（3年以上）：環境構築、実装、ビルド、iOS / Android対応、SDK更新、新アーキテクチャ対応など
-Electron + Vite：環境構築、実装、ビルド、テスト実装、CI/CD、ローカル開発環境構築
-
-
-### クラウド
-Firebase / Google Cloud / GAS（Google Apps Script）
-
-### Web開発
-- Next.js：関係者専用ページや小規模な個人用サイトの制作経験
-- ヘッドレスWordPress
-
-### CSSフレームワーク・UIコンポーネント
-Tailwind CSS、shadcn/ui
-
-### ゲーム開発
-Cocos Creator / Unity / PixiJS / Flash（現Adobe Animate）+ CreateJSなど
-
-学生時代からミニゲームなど小規模ゲーム開発やプレイアブル広告の開発などを行っていました。
-企画から素材制作、実装など大半の工程を担当しました。
-
-
-### プロジェクト管理
-GitHub / GitHub Projects / pnpm（モノレポ環境）/ Docker　
-
-### テストツール
-Vitest / Jest
-
-### その他
-- リンター：ESLint / Prettier / Biome
-- UIドキュメント：Storybook
-- TeX / KaTeX：導入経験あり
-- AI支援：GitHub Copilot / Claude Code / Codex 
-- PRコードレビュー経験あり
-
+### 資格
+- 基本情報技術者試験 平成30年4月合格
+- 応用情報技術者試験 令和6年4月合格
+- 情報処理安全確保支援士試験 令和6年10月合格
 
 ## 職務経歴
 
