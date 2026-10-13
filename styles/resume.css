@@ -5,7 +5,8 @@
   --muted: #555;
   --border: #d9dde2;        /* 表の罫線：薄め */
   --rule: #c8ccd0;          /* H2の下線 */
-  --accent: #444;           /* 案件タイトルの左罫線 */
+  --accent: #444;           /* 取引先・案件のまとまりの左罫線 */
+  --band: #eceff2;          /* 取引先の下の案件名の背景帯 */
   --heading: #0f172a;
 }
 
@@ -22,7 +23,7 @@ html, body {
 }
 
 /* 見出し：本文11ptに合わせて段階的に小さくする */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   color: var(--heading);
   line-height: 1.3;
   break-after: avoid;          /* 見出しだけがページ末尾に残るのを防ぐ */
@@ -37,16 +38,23 @@ h2 {
   border-bottom: 1px solid var(--rule);
 }
 h3 { font-size: 12pt; margin: 1em 0 0.3em; }
-h4 { font-size: 11pt; margin: 0.6em 0 0.1em; }   /* 案件内の小見出し：太字のみ */
+h4 { font-size: 11pt; margin: 0.6em 0 0.1em; }
+h5 { font-size: 10.5pt; margin: 0.5em 0 0.1em; }
 
 /*
- * 視覚階層：H2＝下線 / 案件タイトル＝左罫線 / 案件内小見出し＝太字のみ
- * 案件タイトルは「職務経歴」（markedが付けるid）より後ろのH3
+ * 視覚階層：H2＝下線 / 取引先・案件のまとまり（H3）＝左罫線 /
+ * 取引先の下の案件名（H4）＝薄い背景帯 / 案件内小見出し（H5）＝太字のみ
+ * 対象は「職務経歴」（markedが付けるid）より後ろの見出し
  */
 #職務経歴 ~ h3 {
   margin: 1.5em 0 0.45em;
   padding-left: 0.55em;
   border-left: 4px solid var(--accent);
+}
+#職務経歴 ~ h4 {
+  margin: 1em 0 0.3em;
+  padding: 0.15em 0.55em;
+  background: var(--band);
 }
 
 /* 会社・期間・契約・人数の行：印刷で薄くなりすぎないよう、サイズだけ少し下げる */
