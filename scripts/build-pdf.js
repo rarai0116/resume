@@ -1,6 +1,8 @@
 import { spawnSync } from "node:child_process";
 import { accessSync, constants, mkdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
+import { parseArgs } from "node:util";
+import { DEFAULT_SRC, VARIANTS, outputPathFor } from "./render-md.js";
 
 function fileExists(p) {
 	try {
@@ -103,37 +105,53 @@ function ensureOutDir() {
 	}
 }
 
+// 使い方:
+//   node scripts/build-pdf.js                         … 汎用の原稿から agent と direct の両方を作る
+//   node scripts/build-pdf.js --variant direct        … 種類を1つに絞る
+//   node scripts/build-pdf.js --src private/X.md --variant direct  … 応募先別の原稿から作る
+// PDFは .tmp/<名前>.<種類>.local.pdf に出る（<名前> は render-md.js と同じ決め方）
 function main() {
+  const { values } = parseArgs({
+    options: {
+      variant: { type: "string", multiple: true },
+      src: { type: "string", default: DEFAULT_SRC },
+    },
+  });
+  const variants = values.variant?.length ? values.variant : VARIANTS;
+
   const chrome = detectChrome();
   ensureOutDir();
 
   const isWin = process.platform === "win32";
   const mdToPdfBin = resolve("node_modules", ".bin", isWin ? "md-to-pdf.cmd" : "md-to-pdf");
-
-  // 1) 前処理: テンプレを実値でレンダリング
-  const renderRes = spawnSync(process.execPath, ["scripts/render-md.js"], {
-    stdio: "inherit",
-    env: process.env,
-  });
-  if (renderRes.status !== 0) process.exit(renderRes.status);
-
-  // 2) PDF生成はレンダリング済みの一時MDを入力に
-  const args = [".tmp/resume.local.md", "--config-file", "md-to-pdf.config.json"];
   const commonOpts = {
     stdio: "inherit",
     env: { ...process.env, PUPPETEER_EXECUTABLE_PATH: chrome },
   };
 
-  // Windowsは .cmd を直接叩くと EINVAL のことがあるため cmd.exe 経由
-  const res = isWin
-    ? spawnSync(process.env.comspec || "cmd.exe", ["/c", mdToPdfBin, ...args], commonOpts)
-    : spawnSync(mdToPdfBin, args, commonOpts);
+  for (const variant of variants) {
+    // 1) 前処理: 種類を選び、テンプレを実値でレンダリング
+    const renderRes = spawnSync(
+      process.execPath,
+      ["scripts/render-md.js", "--variant", variant, "--src", values.src],
+      { stdio: "inherit", env: process.env },
+    );
+    if (renderRes.status !== 0) process.exit(renderRes.status || 1);
 
-  if (res.error) {
-    console.error(res.error);
-    process.exit(1);
+    // 2) PDF生成はレンダリング済みの一時MDを入力に（PDFは同じ場所に同じ名前で出る）
+    const args = [outputPathFor(values.src, variant), "--config-file", "md-to-pdf.config.json"];
+
+    // Windowsは .cmd を直接叩くと EINVAL のことがあるため cmd.exe 経由
+    const res = isWin
+      ? spawnSync(process.env.comspec || "cmd.exe", ["/c", mdToPdfBin, ...args], commonOpts)
+      : spawnSync(mdToPdfBin, args, commonOpts);
+
+    if (res.error) {
+      console.error(res.error);
+      process.exit(1);
+    }
+    if (res.status) process.exit(res.status);
   }
-  process.exit(res.status || 0);
 }
 
 main();

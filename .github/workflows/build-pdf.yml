@@ -53,8 +53,11 @@ jobs:
         run: |
           set -e
           # ---- PDF path resolve ----
+          # GitHub Pagesで公開するのは業務委託・エージェント用（agent）
           CFG=$(node -e "try{const c=require('./md-to-pdf.config.json'); if(c && c.out){process.stdout.write(c.out)}}catch(e){}")
-          if [ -n "$CFG" ] && [ -f "$CFG" ]; then
+          if [ -f ".tmp/resume.agent.local.pdf" ]; then
+            OUT=".tmp/resume.agent.local.pdf"
+          elif [ -n "$CFG" ] && [ -f "$CFG" ]; then
             OUT="$CFG"
           elif [ -f ".tmp/resume.local.pdf" ]; then
             OUT=".tmp/resume.local.pdf"
@@ -72,7 +75,9 @@ jobs:
           echo "pdf_path=$OUT" >> "$GITHUB_OUTPUT"
 
           # ---- MD path resolve ----
-          if [ -f "docs/resume.md" ]; then
+          if [ -f ".tmp/resume.agent.local.md" ]; then
+            MD=".tmp/resume.agent.local.md"
+          elif [ -f "docs/resume.md" ]; then
             MD="docs/resume.md"
           elif [ -f ".tmp/resume.local.md" ]; then
             MD=".tmp/resume.local.md"
@@ -91,7 +96,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
-          path: ${{ steps.cfg.outputs.pdf_path }}
+          path: .tmp/*.pdf
           retention-days: 30
 
       - name: Prepare Pages artifact

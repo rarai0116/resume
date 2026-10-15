@@ -1,15 +1,35 @@
 # 職務経歴書
 
-<div style="text-align: right;">
-{{BUILD_DATE}}現在<br>
-氏名：{{NAME|arai}}
-</div>
+<!--
+  only:agentとonly:directの印で囲んだ部分は、ビルドする種類に応じて残すか消すかが決まる。
+  agent  = 業務委託・エージェント用
+  direct = 転職（直接応募）用
+-->
+
+<div style="text-align: right;">{{BUILD_DATE}}現在</div>
+
+<!-- only:agent -->
+## プロフィール
+| 項目         | 内容                            |
+| ---------- | ----------------------------- |
+| 名前         | {{NAME\|XXXX}}                |
+| 生年月日       | {{DOB\|XXXX}}                 |
+| 居住地        | {{RESIDENCE\|XXXX}}           |
+| ポートフォリオサイト | https://www.studio-corobo.com |
+| GitHub     | https://github.com/rarai0116/ |
+<!-- /only -->
+
+<!-- only:direct -->
+<div style="text-align: right;">氏名：{{NAME|arai}}</div>
+<!-- /only -->
 
 
 ## 職務要約
 ゲーム・Webコンテンツ開発を起点に、10年以上にわたりソフトウェア開発に従事してきました。平成26年に個人事業主として独立し、近年はReact（React Native / Expo、Electron）を軸にモバイルアプリ・業務用デスクトップアプリを開発しています。要件整理・設計から、フロントエンドとバックエンドの開発、運用・サポートまで一貫して担当しています。
 
+<!-- only:direct -->
 【ポートフォリオ】https://www.studio-corobo.com　【GitHub】https://github.com/rarai0116/
+<!-- /only -->
 
 
 ## スキル
@@ -115,6 +135,10 @@ UnityやFlash（現Adobe Animate）、HTML5技術を使用してモバイル向�
 - {{P_ORG_007|XXX大学}}の学生向けにVR/AR開発講座をボランティアで実施(平成29年10月〜12月)
 - VR動画12時間分の日本語翻訳プロジェクトに参加(平成29年9月〜平成30年5月)
 
+
+<!-- only:direct -->
+<!-- 「貴社で活かせるスキル・経験」の欄はここに書く（転職用だけに出る） -->
+<!-- /only -->
 
 ## 自己PR
 <ins>設計・実装から運用まで一貫して携わった経験</ins>

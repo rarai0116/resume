@@ -8,20 +8,33 @@
 [![build pdf](https://img.shields.io/github/actions/workflow/status/rarai0116/resume/build-pdf.yml?label=build%20pdf&logo=github)](https://github.com/rarai0116/resume/actions?query=workflow%3A%22build+pdf%22)
 
   ## Usage
-  
+
   1. Install dependencies:
       ```bash
-      npm install
+      pnpm install
       ```
-  2. Render the Markdown template with environment variables:
+  2. Build the PDFs (renders the template with `.env.local`, then converts it to PDF):
       ```bash
-      npm run render-md
+      pnpm run build:pdf
       ```
-  3. Generate the PDF from the rendered Markdown:
-      ```bash
-      npm run build-pdf
-      ```
-  4. The generated PDF will be located at `./.tmp/resume.pdf`.
+  3. Two PDFs are generated from `docs/resume.template.md`:
+      - `.tmp/resume.agent.local.pdf` … for freelance contracts and agencies (with the profile table). This is the one published on GitHub Pages.
+      - `.tmp/resume.direct.local.pdf` … for direct job applications (date and name only, with the "貴社で活かせるスキル・経験" section).
+
+  ### Variants
+  Parts wrapped in `<!-- only:agent -->` … `<!-- /only -->` or `<!-- only:direct -->` … `<!-- /only -->` are kept only in that variant.
+  The markers cannot be nested.
+
+  - Build one variant: `node scripts/build-pdf.js --variant direct`
+  - Render Markdown only: `node scripts/render-md.js --variant agent`
+
+  ### Company-specific versions
+  Put them in `private/` (ignored by git, never pushed). Copy the template, tailor it, then build:
+  ```bash
+  node scripts/build-pdf.js --src private/<case-id>.md --variant direct
+  pnpm exec textlint private/<case-id>.md
+  ```
+  The PDF is written to `.tmp/<case-id>.direct.local.pdf`. CI lints only `docs/`, so run textlint yourself.
 
   ## private info replacement
   To replace private information in the resume, create a `.env.local` file in the project root directory with the following format:
