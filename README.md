@@ -33,5 +33,9 @@
   ```
   Then run the `render-md` script to generate the Markdown file with the replaced information.
 
+  `{{BUILD_DATE}}` is filled with the build date in the Japanese era format (e.g. `令和8年10月15日`, Asia/Tokyo time).
+  To print a fixed date instead, set `BUILD_DATE` for that build, e.g. `BUILD_DATE="令和8年10月20日" pnpm run build:pdf`.
+  Avoid putting `BUILD_DATE` in `.env.local`, or every later build will keep that date.
+
   [PDF](https://rarai0116.github.io/resume/resume.pdf)
   [MD](https://rarai0116.github.io/resume/index.md)
